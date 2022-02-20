@@ -10,6 +10,7 @@ bool detectLoop(Node* head)
             
             // cycle is present
             if(visited[curr]==true){
+                cout<<"present on: "<<curr->data<<endl;
                 return 1;
             }
             
