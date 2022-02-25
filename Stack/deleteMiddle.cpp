@@ -25,3 +25,23 @@ void deleteMid(stack<int>&s, int size)
 
 
 
+
+// Space Complexity = O(n)    
+// Using another stack
+
+void deleteMid(stack<int>&s, int size)
+{
+    stack<int> tempElement;
+    int middle=(size)/2;
+    for(int i=0;i<middle;i++){
+        int temp=s.top();
+        tempElement.push(temp);
+        s.pop();
+    }
+    s.pop();
+    while(!tempElement.empty()){
+        int temp=tempElement.top();
+        s.push(temp);
+        tempElement.pop();
+    }
+}
