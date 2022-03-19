@@ -1,5 +1,6 @@
 #include<iostream>
 #include<queue>
+#include<stack>
 using namespace std;
 
 class node {
@@ -64,6 +65,38 @@ void levelOrderTraversal(node* root) {
     }
 
 }
+
+
+// void reverseLevelOrderTraversal(node* root) {
+//     stack<node*> q;
+//     q.push(root);
+//     q.push(NULL);
+
+//     while(!q.empty()) {
+//         node* temp = q.top();
+//         q.pop();
+
+//         if(temp == NULL) { 
+//             //purana level complete traverse ho chuka hai
+//             cout << endl;
+//             if(!q.empty()) { 
+//                 //queue still has some child ndoes
+//                 q.push(NULL);
+//             }  
+//         }
+//         q.push(temp);
+//         if(temp != NULL){
+//             // cout << temp -> data << " ";
+//             if(temp ->right) {
+//                 q.push(temp ->right);
+//             }
+//             if(temp ->left) {
+//                 q.push(temp ->left);
+//             }
+//         }
+//     }
+
+// }
 
 void inorder(node* root) {
     //base case
@@ -142,6 +175,7 @@ int main() {
 
     buildFromLevelOrder(root);
     levelOrderTraversal(root);
+    // reverseLevelOrderTraversal(root);
     // 1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
 
     /*
